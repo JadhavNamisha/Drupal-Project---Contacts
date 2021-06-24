@@ -30,3 +30,6 @@ a:focus {
 .path-add-contacts .form-item-status {
     display: none;
 }
+.path-add-contacts .js-form-item {
+    margin-bottom: 3%;
+}
