@@ -135,7 +135,7 @@ class ContactForm extends FormBase {
                ->execute();
 			drupal_set_message("Successfully Saved");
 
-			$response = new RedirectResponse("/drupal-8.6.16/evolent_contacts/display-contacts");
+			$response = new RedirectResponse("/evolent_contacts/display-contacts");
 			$response->send();
 		}
     }
