@@ -27,6 +27,6 @@ div#block-drupal8-parallax-theme-content table tbody tr td:last-child a img, div
 a:focus {
     outline: unset !important;
 }
-/*.parallax-widget.one {
+.path-add-contacts .form-item-status {
     display: none;
-}*/
+}
