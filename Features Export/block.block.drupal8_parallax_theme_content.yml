@@ -1,0 +1,22 @@
+uuid: 3336f944-6e03-4626-a8a2-2afc28abe549
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - drupal8_parallax_theme
+_core:
+  default_config_hash: _Lf-VmJRNESoDU1ikAjiaDG8V68B4-4oB1CiDIWT7Ds
+id: drupal8_parallax_theme_content
+theme: drupal8_parallax_theme
+region: content
+weight: -5
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

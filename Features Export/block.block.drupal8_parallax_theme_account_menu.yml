@@ -1,0 +1,26 @@
+uuid: c733c700-27df-4fa2-a625-61d9db571ad6
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - drupal8_parallax_theme
+_core:
+  default_config_hash: NHAMWo73DJUdXx7gWYLRfidvkYAZdHr7CPmEOpjgAXM
+id: drupal8_parallax_theme_account_menu
+theme: drupal8_parallax_theme
+region: auto_hidden_block
+weight: 11
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 2
+visibility: {  }

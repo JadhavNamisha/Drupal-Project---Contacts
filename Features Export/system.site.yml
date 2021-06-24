@@ -1,0 +1,14 @@
+uuid: 23c9f6d9-4c4a-47a6-aa6f-d8345d2090ff
+name: 'Evolent Health'
+mail: namisha.jadhav@cummins.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI

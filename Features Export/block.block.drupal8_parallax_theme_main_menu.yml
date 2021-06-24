@@ -1,0 +1,26 @@
+uuid: a8650a7d-2642-4aab-ba30-4c718d5f55c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - drupal8_parallax_theme
+_core:
+  default_config_hash: Ib_0cR6nFZy2Aly0xZWsNrsscpWynT27-q1kpAT090Y
+id: drupal8_parallax_theme_main_menu
+theme: drupal8_parallax_theme
+region: primary_menu
+weight: 10
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 2
+visibility: {  }

@@ -1,0 +1,26 @@
+uuid: c3618664-97f6-42c0-8493-0645c174c8dd
+langcode: en
+status: true
+dependencies:
+  module:
+    - evolent_contacts
+    - system
+  theme:
+    - drupal8_parallax_theme
+id: evolentcontactsblock
+theme: drupal8_parallax_theme
+region: content
+weight: 0
+provider: null
+plugin: contacts_block
+settings:
+  id: contacts_block
+  label: 'Evolent Contacts block'
+  provider: evolent_contacts
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /add-contacts
+    negate: false
+    context_mapping: {  }

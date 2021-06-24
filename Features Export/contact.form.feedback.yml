@@ -1,0 +1,14 @@
+uuid: 3dc82e0f-c9a9-4349-85b7-2405ff8ac33a
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: vymHlgJy26BuI5GGj9-IXjwR3dRC5C0tij4BpWJnoqw
+id: feedback
+label: 'Website feedback'
+recipients:
+  - namisha.jadhav@cummins.com
+reply: ''
+weight: 0
+message: 'Your message has been sent.'
+redirect: ''

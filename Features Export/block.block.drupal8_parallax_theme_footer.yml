@@ -1,0 +1,26 @@
+uuid: e60f52c7-1625-49d2-b244-85c0bace5282
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - drupal8_parallax_theme
+_core:
+  default_config_hash: GBmyk41I2ZBOpKPcKRpYiiUJJX75xz-8TelZ_m5Xg2c
+id: drupal8_parallax_theme_footer
+theme: drupal8_parallax_theme
+region: header
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: 'Footer menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

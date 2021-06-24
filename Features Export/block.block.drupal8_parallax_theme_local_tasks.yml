@@ -1,0 +1,22 @@
+uuid: e15a84f1-4a9e-45b1-a67b-5a06b1eeaf70
+langcode: en
+status: true
+dependencies:
+  theme:
+    - drupal8_parallax_theme
+_core:
+  default_config_hash: eI1jFud8wZPs_K_P7oDya4G7gQKrnSufgMP9VAopI2s
+id: drupal8_parallax_theme_local_tasks
+theme: drupal8_parallax_theme
+region: content
+weight: -6
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }
