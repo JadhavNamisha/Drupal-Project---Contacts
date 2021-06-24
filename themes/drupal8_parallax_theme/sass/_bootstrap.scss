@@ -1,0 +1,28 @@
+
+/*Carousel*/
+
+.carousel-caption{
+
+	h2{
+		display: none;
+		margin-top: 0;
+		color: #3686BE;
+	}
+}
+
+.carousel-indicators{
+
+	li{
+		border: 1px solid #3686BE;
+		width: 20px;
+		height: 20px;
+	}
+
+	.active{
+		background-color: #3686BE;
+		width: 22px;
+		height: 22px;
+	}
+
+}
+

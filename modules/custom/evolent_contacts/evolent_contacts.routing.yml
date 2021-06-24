@@ -1,0 +1,35 @@
+evolent_contacts.evolent_contacts_controller_display:
+  path: '/add-contacts'
+  defaults:
+    _controller: '\Drupal\evolent_contacts\Controller\ContactsController::display'
+    _title: 'display'
+  requirements:
+    _permission: 'access content'
+
+evolent_contacts.evolent_contacts_form:
+  path: '/evolent_contacts/form/evolent_contacts'
+  defaults:
+    _form: '\Drupal\evolent_contacts\Form\ContactForm'
+    _title: 'Contact Form'
+  requirements:
+    _access: 'TRUE'
+  
+
+evolent_contacts.display_table_controller_display:
+  path: '/evolent_contacts/display-contacts'
+  defaults:
+    _controller: '\Drupal\evolent_contacts\Controller\DisplayTableController::display'
+    _title: 'display'
+  requirements:
+    _permission: 'access content'
+
+
+
+evolent_contacts.delete_form:
+  path: '/evolent_contacts/form/delete/{cid}'
+  defaults:
+    _form: '\Drupal\evolent_contacts\Form\DeleteForm'
+    _title: 'DeleteForm'
+  requirements:
+    _access: 'TRUE'
+  

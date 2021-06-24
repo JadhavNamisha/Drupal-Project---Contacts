@@ -1,0 +1,99 @@
+
+/* Testimonials */
+
+.testimonials-wrap{
+	background: #fafafa;
+	border-top: solid 1px #e3e3e3;
+	border-bottom: solid 1px #e3e3e3;
+	padding: 20px 0;
+	text-align: center;
+	font-size: 1em;
+	line-height: 160%;
+}
+
+.region-testimonials{
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+.testimonials-pic{
+	width: 40px;
+	height: 40px;
+	display: inline-block;
+	vertical-align: bottom;
+	margin-right: 10px;
+
+}
+
+.testimonials-pic img{
+	@include border-radius(50%);
+}
+
+.testimonials-author{
+	padding: 0 5px;
+	font-size: .75em;
+	color: #555;
+}
+
+
+/*Front Page*/
+
+.path-frontpage .feed-icon{
+  display: none;
+}
+
+.path-frontpage .content_layout{
+	max-width: 750px;
+	margin: 0 auto;
+	padding: 20px 0;
+	overflow: hidden;
+}
+
+
+/*Region Homepage Message*/
+
+.region-homepagemessage{
+	padding: 20px 0;
+	text-align: center;
+	max-width: 750px;
+	margin: 0 auto;
+
+	p, .block{ margin: 0; }
+}
+
+
+/*Address*/
+
+.address-wrap{
+	text-align: center;
+	padding: 25px 0 10px 0;
+	background: image-url("world-map.png") $addressBg center no-repeat;
+}
+
+
+/*Bottom Widgets*/
+
+.bottom-widgets{
+	text-align: center;
+	margin: 0 auto;
+	padding-bottom: 30px;
+	background: #27ae60;
+    color: #b4dec6;
+
+	.block h2.title{
+	  margin: 5px 0 10px 0;
+	  color: #fff;
+	}
+
+	.row > div{
+		border-right: 1px solid #2ec16c;
+
+		&:last-child{
+			border: 0;
+		}
+	}
+}
+
+.path-frontpage .bottom-widgets{
+	padding: 20px 0;
+}

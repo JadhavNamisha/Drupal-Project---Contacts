@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ * Contains evolent_contacts.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function evolent_contacts_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.evolent_contacts':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Display Information:') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+function evolent_contacts_theme() {
+  return [
+    'evolent_contacts_description' => [
+      'template' => 'description',
+      'variables' => [],
+    ],
+  ];
+}

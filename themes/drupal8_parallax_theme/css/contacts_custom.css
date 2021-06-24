@@ -1,0 +1,32 @@
+/* Width of region for display contacts */
+.path-evolent-contacts .parallax-region {
+    max-width: unset !important;
+}
+/* CSS for add contacts form */
+form#evolent-contacts-form label {
+    width: 12%;
+    font-size: 12px;
+    font-weight: normal;
+}
+div#block-drupal8-parallax-theme-content .content {
+    font-size: 13px;
+    font-weight: bolder;
+}
+form#evolent-contacts-form input {
+    border-radius: 8px;
+}
+form#evolent-contacts-form select#edit-status {
+    border-radius: 8px;
+}
+.path-add-contacts form#evolent-contacts-form label {
+    width: 17%;
+}
+div#block-drupal8-parallax-theme-content table tbody tr td:last-child a img, div#block-drupal8-parallax-theme-content table tbody tr td:nth-child(6) a img {
+    margin-left: 35%;
+}
+a:focus {
+    outline: unset !important;
+}
+/*.parallax-widget.one {
+    display: none;
+}*/

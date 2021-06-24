@@ -1,0 +1,35 @@
+/*Variables*/
+/*Header*/
+/*Menu Color*/
+/*Mixins*/
+@media (min-width: 767px) { .main-header { position: fixed; top: 0; left: 0; right: 0; z-index: 99; overflow: visible; }
+  .user-logged-in .main-header { position: relative; }
+  /*flexslider*/
+  .flexslider h2 { font-size: 2em; }
+  .flexslider .slider-caption { display: block; }
+  .flexslider .flex-direction-nav { display: block; margin-top: -24px; }
+  .top-menu { padding: 0; text-align: left; }
+  .testimonials-wrap { padding: 75px 0 55px; }
+  .topwidget > div { border-right: 1px dotted #ddd; }
+  .topwidget > div:last-child { border: 0; }
+  .copyright p { margin: 10px 0; }
+  .footerwidget img.left { float: left; margin: 10px 10px 0 0; }
+  .region-primary-menu { display: inline-block !important; float: right; width: auto; margin: 0; background: none; }
+  .region-primary-menu ul { border: 0; }
+  .region-primary-menu ul ul { background: #fff; background: rgba(255, 255, 255, 0.74); }
+  .region-primary-menu ul ul li a, .region-primary-menu ul ul li a:hover, .region-primary-menu ul ul li a:focus, .region-primary-menu ul ul li a:active, .region-primary-menu ul ul li a.highlighted { padding: 12px 15px; }
+  .region-primary-menu li { border: 0; }
+  .region-primary-menu li a { background: none; border: 0; color: black; }
+  .region-primary-menu li a span.sub-arrow { padding: 0; top: 20px; margin-top: 0; bottom: 2px; right: 2px; margin-left: -5px; left: auto; width: 0; height: 0; border-width: 4px; border-style: solid; border-color: #848484 transparent transparent transparent; font-size: 2em; line-height: 100%; }
+  .region-primary-menu li li span.sub-arrow { top: 12px; border-color: transparent transparent transparent #848484; }
+  .region-primary-menu li.active a { background: none; color: #ff6260; }
+  .carousel-caption p, .carousel-caption h3 { display: block; }
+  .carousel-caption p:last-child { margin: 0; }
+  .carousel-caption { background-color: #fff; background: rgba(0, 0, 0, 0.84); color: #ddd; text-shadow: none; padding: 20px; top: 20%; left: 10%; bottom: auto; width: 30%; text-align: left; }
+  .credit-link { text-align: right; }
+  /*comment*/
+  .comment-wrap .author-details { width: 10%; }
+  .comment-wrap .author-comments { width: 90%; }
+  .region-top-menu { margin: 10px 0; }
+  .region-top-menu ul { text-align: right; }
+  .region-contact-email p { margin: 10px 0; line-height: 120%; font-size: 2em; } }

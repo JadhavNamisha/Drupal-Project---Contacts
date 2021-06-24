@@ -1,0 +1,5 @@
+name: Evolent Contact Form
+description: A form to enter user details.
+type: module
+core: 8.x
+package: Custom

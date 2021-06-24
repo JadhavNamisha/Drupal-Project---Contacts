@@ -1,0 +1,450 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a single page.
+ *
+ * The doctype, html, head and body tags are not in this template. Instead they
+ * can be found in the html.html.twig template in this directory.
+ *
+ * Available variables:
+ *
+ * General utility variables:
+ * - base_path: The base URL path of the Drupal installation. Will usually be
+ *   "/" unless you have installed Drupal in a sub-directory.
+ * - is_front: A flag indicating if the current page is the front page.
+ * - logged_in: A flag indicating if the user is registered and signed in.
+ * - is_admin: A flag indicating if the user has permission to access
+ *   administration pages.
+ *
+ * Site identity:
+ * - front_page: The URL of the front page. Use this instead of base_path when
+ *   linking to the front page. This includes the language domain or prefix.
+ * - logo: The url of the logo image, as defined in theme settings.
+ * - site_name: The name of the site. This is empty when displaying the site
+ *   name has been disabled in the theme settings.
+ * - site_slogan: The slogan of the site. This is empty when displaying the site
+ *   slogan has been disabled in theme settings.
+ *
+ * Page content (in order of occurrence in the default page.html.twig):
+ * - messages: Status and error messages. Should be displayed prominently.
+ * - node: Fully loaded node, if there is an automatically-loaded node
+ *   associated with the page and the node ID is the second argument in the
+ *   page's path (e.g. node/12345 and node/12345/revisions, but not
+ *   comment/reply/12345).
+ *
+ * Regions:
+ * - page.header: Items for the header region.
+ * - page.navigation: Items for the Navigation region.
+ * - page.page_title: Used by Current page Title.
+ * - page.banner: Items for the banner region.
+ * - page.highlighted: Items for the highlighted top  region.
+ * - page.content_top: The main content top of the current page.
+ * - page.help: Item for the help region.
+ * - page.breadcrumb: Item for the Breadcrumb region.
+ * - page.content: The main content of the current page.
+ * - page.sidebar_first: Items for the first sidebar.
+ * - page.sidebar_second: Items for the second sidebar.
+ * - page.content_bottom: Items for the bottom in content region.
+ * - page.footer_top: Items for the footer top region.
+ * - page.footer_first: Items for the footer first region.
+ * - page.footer_second: Items for the footer Second region.
+ * - page.footer_third: Items for the footer third region.
+ * - page.footer_bottom: Items for the footer bottom region.
+ *
+ * @see template_preprocess_page()
+ * @see html.html.twig
+ *
+ * @ingroup themeable
+ */
+#}
+
+
+{% if page.contact_email or page.top_menu %}
+  <div class="top-menu">
+    <div class="container">
+      <div class="row">
+
+        <!-- Start: Contact Phone & Email -->
+        <div class="col-sm-8">
+          {% if page.contact_email %}
+            {{ page.contact_email }}
+          {% endif %}
+        </div>
+        <!-- End: Contact Phone & Email -->
+
+        <!-- Start: Top menu -->
+        <div class="col-sm-4">
+          {% if page.top_menu %}
+            {{ page.top_menu }}
+          {% endif %}
+        </div>
+        <!-- End: Top menu -->
+
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+
+<header class="main-header">
+  <nav class="navbar topnav navbar-default" role="navigation">
+    <div class="container">
+      <div class="row">
+
+        <!-- Start: Header -->
+        <div class="navbar-header col-md-3">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          {% if page.header %}
+            {{ page.header }}
+          {% endif %}
+        </div>
+        <!-- End: Header -->
+
+        <!-- Start: Main menu -->
+        <div class="col-md-9">
+          {% if page.primary_menu %}
+            {{ page.primary_menu }}
+          {% endif %}
+        </div>
+
+        </div>
+      </div>
+    </nav>
+</header>
+
+
+<!-- Start: Slider -->
+  {% if is_front and show_slideshow%}
+    <div class="flexslider wow bounceInUp">
+      <ul class="slides">
+        {% for slider_contents in slider_content %}
+          {{ slider_contents | raw }}
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+<!-- End: Slider -->
+
+
+<!-- Start: Home page message -->
+  {% if (is_front) and (page.topwidget_first or page.topwidget_second or page.topwidget_third or page.homepagemessage) %}
+    <div class="parallax-widget zero" id="about">
+      <div class="container">
+        <div class="parallax-region wow bounceInDown">
+
+          <!-- Start: Home page message -->
+          {% if is_front and page.homepagemessage %}
+            {{ page.homepagemessage }}
+          {% endif %}
+          <!--End: Home page message -->
+
+          {% if (is_front) and (page.topwidget_first or page.topwidget_second or page.topwidget_third) %}
+            <div class="row topwidget">
+
+              <!-- Start: Top wid
+              get first -->          
+              {% if page.topwidget_first %}
+                <div class = {{ topwidget_class }}>{{ page.topwidget_first }}</div>
+              {% endif %}          
+              <!-- End: Top widget first --> 
+
+              <!-- Start: Top widget second -->          
+              {% if page.topwidget_second %}
+                <div class = {{ topwidget_class }}>{{ page.topwidget_second }}</div>
+              {% endif %}          
+              <!-- End: Top widget second --> 
+              
+              <!-- Start: Top widget third -->         
+              {% if page.topwidget_third %}
+                <div class = {{ topwidget_third_class }}>{{ page.topwidget_third }}</div>
+              {% endif %}          
+              <!-- End: Top widget third -->
+
+            </div>
+          {% endif %}
+
+        </div>
+      </div>
+    </div>
+  {% endif %}
+<!--End: Home page message -->
+
+
+<!-- Start: xxx -->
+<div class="parallax-widget one">
+  <div class="parallax-region- wow bounceInDown">
+    
+    {% if page.highlighted %}
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            {{ page.highlighted }}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+    {%  if page.page_title and not is_front %}
+      <div id="page-title">
+        <div id="page-title-inner">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                {{ page.page_title }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="container">
+      <div class="parallax-region">
+
+        {% if not is_front %}
+          <div class="row">
+            <div class="col-md-12">{{ page.breadcrumb }}</div>
+          </div>
+        {% endif %}
+
+        <div class="row layout">
+
+          {% if page.sidebar_first %}
+            <div class="sidebar">
+              <div class={{sidebarfirst}}> {{page.sidebar_first}} </div>
+            </div>
+          {% endif %}
+
+          {% if page.content %}
+            <div class="content_layout">
+              <div class={{contentlayout}}> {{page.content}} </div>
+            </div>
+          {% endif %}
+
+          {% if page.sidebar_second %}
+            <div class="sidebar">
+              <div class={{sidebarsecond}}> {{page.sidebar_second}} </div>
+            </div>
+          {% endif %}
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End: xxx -->
+
+
+<!-- Start: Home page message -->
+  {% if is_front and page.services %}
+    <div class="parallax-widget two" id="services">
+      <div class="container">
+        <div class="parallax-region wow bounceInDown">
+          <div class="row">
+            <div class="col-md-12">
+              {{ page.services }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+<!--End: Home page message -->
+
+
+<!-- Start: Home page message -->
+  {% if is_front and page.clients %}
+    <div class="parallax-widget three" id="clients">
+      <div class="container">
+        <div class="parallax-region wow bounceInDown">
+          <div class="row">
+            <div class="col-md-12">
+              {{ page.clients }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+<!--End: Home page message -->
+
+
+<!-- Start: Home page message -->
+{% if is_front and (page.bottom_first or page.bottom_second or page.bottom_third or page.bottom_forth) %}
+  <div class="parallax-widget four" id="products">    
+    <div class="container">
+      <div class="parallax-region wow bounceInDown">
+        <div class="row">
+
+          <!-- Start: Bottom First -->          
+          {% if page.bottom_first %}
+            <div class = {{ bottom_class }}>
+              {{ page.bottom_first }}
+            </div>
+          {% endif %}          
+          <!-- End: Bottom First -->
+
+          <!-- Start: Bottom Second -->
+          {% if page.bottom_second %}
+            <div class = {{ bottom_class }}>
+              {{ page.bottom_second }}
+            </div>
+          {% endif %}          
+          <!-- End: Bottom Second -->
+
+          <!-- Start: Bottom third -->          
+          {% if page.bottom_third %}
+            <div class = {{ bottom_class }}>
+              {{ page.bottom_third }}
+            </div>
+          {% endif %}          
+          <!-- End: Bottom Third -->
+
+          <!-- Start: Bottom Forth -->
+          {% if page.bottom_forth %}
+            <div class = {{ bottom_class }}>
+              {{ page.bottom_forth }}
+            </div>
+          {% endif %}
+          <!-- End: Bottom Forth -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+<!--End: Home page message -->
+
+
+<!-- Start: Home page message -->
+{% if is_front and page.google_map and page.address%}
+  <div class="parallax-widget five map-and-address" id="contact">
+    <div class="container">
+      <div class="parallax-region wow bounceInUp">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- Start: Google map -->
+            {% if page.google_map %}
+              <div class="google_map">{{ page.google_map }}</div>
+            {% endif %}
+            <!-- End: Google map -->
+          </div>
+          <div class="col-md-6">
+            <!-- Start: Address -->
+            {% if page.address %}
+              <div class="address-wrap">{{ page.address }}</div>
+            {% endif %}
+          <!--End: Address -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+<!--End: Home page message -->
+
+
+<!-- Start: Home page message -->
+{% if  is_front and (page.footer_first or page.footer_second or page.footer_third) %}
+  <div class="parallax-widget six" id="footer">
+    <div class="container">
+      <div class="parallax-region wow bounceInUp">  
+        <div class="row">
+
+          <!-- Start: Footer First -->
+          {% if page.footer_first %}
+            <div class = {{ footer_first_class }}>
+              {{ page.footer_first }}
+            </div>
+          {% endif %}
+          <!-- End: Footer First -->
+
+          <!-- Start :Footer Second -->
+          {% if page.footer_second %}
+            <div class = {{ footer_class }}>
+              {{ page.footer_second }}
+            </div>
+          {% endif %}
+          <!-- End: Footer Second -->
+
+          <!-- Start: Footer third -->
+          {% if page.footer_third %}
+            <div class = {{ footer_class }}>
+              {{ page.footer_third }}
+            </div>
+          {% endif %}
+          <!-- End: Footer Third -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+<!--End: Home page message -->
+
+
+<!-- Start: Footer Menu -->
+{% if show_social_icon %}
+  <div class="footer-menu">
+    <div class="container">
+      <div class="row">
+
+        <!-- Start: Social media links -->
+        <div class="col-sm-12">
+          <div class="social-media">
+            {% if facebook_url %}
+              <a href="{{ facebook_url }}"  class="facebook" target="_blank" ><i class="fa fa-facebook"></i></a>
+            {% endif %}
+            {% if google_plus_url %}
+              <a href="{{ google_plus_url }}"  class="google-plus" target="_blank" ><i class="fa fa-google-plus"></i></a>
+            {% endif %}
+            {% if twitter_url %}
+              <a href="{{ twitter_url }}" class="twitter" target="_blank" ><i class="fa fa-twitter"></i></a>
+            {% endif %}
+            {% if linkedin_url %}
+              <a href="{{ linkedin_url }}" class="linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
+            {% endif %}
+            {% if pinterest_url %}
+              <a href="{{ pinterest_url }}" class="pinterest" target="_blank" ><i class="fa fa-pinterest"></i></a>
+            {% endif %}
+            {% if rss_url %}
+              <a href="{{ rss_url }}" class="rss" target="_blank" ><i class="fa fa-rss"></i></a>
+            {% endif %}
+          </div>
+        </div>
+        <!-- End: Social media links -->
+
+      </div>
+    </div>
+  </div>
+{% endif %}
+<!-- End: Footer Menu -->
+
+
+<!-- Start: Copyright -->
+<div class="copyright">
+  <div class="container">
+    <div class="row">
+
+      <!-- Start: Copyright -->
+      <div class="col-sm-6">
+        <p>Copyright © {{ "now"|date("Y") }}. All rights reserved.</p>
+      </div>
+      <!-- End: Copyright -->
+
+      <!-- Start: Credit link -->
+      {% if show_credit_link %}
+        <div class="col-sm-6">
+          <p class="credit-link">Designed By <a href="http://www.zymphonies.com" target="_blank">Zymphonies</a></p>
+        </div>
+      {% endif %}
+      <!-- End: Credit link -->
+      
+    </div>
+  </div>
+</div>
